@@ -1,0 +1,51 @@
+{
+  "name": "nodejs-seed-project",
+  "version": "0.0.1",
+  "description": "MVC NodeJS Seed Project with MongoDB, Mongoose, APIs, Webhooks, and Cron-jobs.",
+  "main": "src/app.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biruelrick/asaas-integration-v1.git"
+  },
+  "keywords": [
+    "asaas",
+    "v1",
+    "integration",
+    "jarvisly"
+  ],
+  "author": "Ricardo Biruel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biruelrick/asaas-integration-v1/issues"
+  },
+  "homepage": "https://github.com/biruelrick/asaas-integration-v1#readme",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.9",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0",
+    "node-cron": "^3.0.2",
+    "winston": "^3.10.0"
+  },
+  "gitignore": {
+    "node_modules": true
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3"
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": "9.x"
+  }
+}
