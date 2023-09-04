@@ -75,7 +75,7 @@ db.once('open', () => {
   const dbFinishTime = dayjs().unix();
   const dbSpentTime = dbFinishTime - dbInitTime;
   logger.info(
-    `👍 MongoDB Connected Successfully! 🚀 -> ${dbDetails} in ${dbSpentTime} seconds...`,
+      `👍 MongoDB Connected Successfully! 🚀 -> ${dbDetails} in ${dbSpentTime} seconds...`,
   );
 });
 
@@ -86,8 +86,8 @@ db.on('error', (err) => {
   const dbFinishTime = dayjs().unix();
   const dbSpentTime = dbFinishTime - dbInitTime;
   logger.error(
-    `👎 MongoDB Connection error ${err} ❌`,
-    `${dbDetails} takes ${dbSpentTime} seconds...`,
+      `👎 MongoDB Connection error ${err} ❌`,
+      `${dbDetails} takes ${dbSpentTime} seconds...`,
   );
 });
 
@@ -98,8 +98,8 @@ db.on('disconnected', () => {
   const dbFinishTime = dayjs().unix();
   const dbSpentTime = dbFinishTime - dbInitTime;
   logger.debug(
-    '👋 MongoDB Disconnected! ✅',
-    `${dbDetails} takes ${dbSpentTime} seconds...`,
+      '👋 MongoDB Disconnected! ✅',
+      `${dbDetails} takes ${dbSpentTime} seconds...`,
   );
 });
 
@@ -110,8 +110,8 @@ db.once('close', () => {
   const dbFinishTime = dayjs().unix();
   const dbSpentTime = dbFinishTime - dbInitTime;
   logger.debug(
-    '👋 MongoDB Closed Successfully! ✅',
-    `${dbDetails} takes ${dbSpentTime} seconds...`,
+      '👋 MongoDB Closed Successfully! ✅',
+      `${dbDetails} takes ${dbSpentTime} seconds...`,
   );
 });
 
@@ -119,8 +119,3 @@ db.once('close', () => {
 // mongo connection
 // -------------------------------------------------------------------------- //
 await mongoose.connect(MONGO_URI);
-
-// -------------------------------------------------------------------------- //
-// exports
-// -------------------------------------------------------------------------- //
-export default db;

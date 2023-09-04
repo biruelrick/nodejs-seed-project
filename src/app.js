@@ -1,5 +1,6 @@
 import './db.js';
 import './utils/cron.js';
+
 import express from 'express';
 import bodyParser from 'body-parser';
 import logger from './utils/logger.js';
@@ -7,22 +8,22 @@ import apiRoutesV1 from './routes/apiRoutesV1.js';
 import webhookRoutesV1 from './routes/webhookRoutesV1.js';
 import cors from 'cors';
 import env from './config.js';
-import { errorMiddleware } from './middlewares/errorMiddleware.js';
+import {errorMiddleware} from './middlewares/errorMiddleware.js';
 
-const { APP_NAME, PORT } = env;
+const {APP_NAME, PORT} = env;
 const app = express();
 
 // -------------------------------------------------------------------------- //
 // cors configuration
 // -------------------------------------------------------------------------- //
 const corsOptions = {
-  origin: [
-    'http://localhost',
-    'https://api.jarvisly.com',
-    'https://asaas.jarvisly.com',
-  ],
-  methods: 'GET,PUT,POST,DELETE',
-  credentials: true,
+    origin: [
+        'http://localhost',
+        'https://api.jarvisly.com',
+        'https://asaas.jarvisly.com',
+    ],
+    methods: 'GET,PUT,POST,DELETE',
+    credentials: true,
 };
 app.use(cors(corsOptions)); // Aplicar as opções CORS
 
@@ -50,7 +51,7 @@ app.use(errorMiddleware);
 // api server bootstrap
 // -------------------------------------------------------------------------- //
 app.listen(PORT || 8010, () => {
-  logger.debug(
-    `👍 Asaas Integration Services for '${APP_NAME}' application running at 👉 http://localhost:${PORT} 🚀 `,
-  );
+    logger.debug(
+        `👍 Asaas Integration Services for '${APP_NAME}' application running at 👉 http://localhost:${PORT} 🚀 `,
+    );
 });
